@@ -1,0 +1,12 @@
+.navbargauche{
+    position:absolute;
+    top:0;
+    bottom:0;
+    width:160px;
+    background:#575F72;
+    padding:10px;
+}
+h1{
+    font-size: 18px;
+    color:#fff;
+}

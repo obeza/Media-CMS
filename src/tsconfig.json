@@ -15,6 +15,7 @@
     ],
     "types": [
       "jasmine"
-    ]
+    ],
+    "files" : ["typings/youtube.d.ts"]
   }
 }

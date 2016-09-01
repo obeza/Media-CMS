@@ -1,0 +1,18 @@
+<comp-navbargauche></comp-navbargauche>
+<comp-central>
+  <h3>Articles</h3>
+
+  <div class="list-group">
+    <a 
+    [routerLink]="['/article/', article._id]" 
+    class="list-group-item"
+    *ngFor="let article of articles"
+    >{{ article.titre }}</a>
+  </div>
+
+
+</comp-central>
+
+<a routerLink="/article/ajouter" class="btn btn-link btn-lg btn-position">
+  <span class="glyphicon glyphicon-plus-sign btn-plus" aria-hidden="true"></span>
+</a>

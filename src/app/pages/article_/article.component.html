@@ -1,0 +1,110 @@
+<comp-navbargauche></comp-navbargauche>
+
+<comp-central>
+  <h3>Articles</h3>
+
+  <div class="form-article">
+    <form (ngSubmit)="onSubmit()" #articleForm="ngForm">
+      <div class="bt-action">
+        <button 
+          type="submit" 
+          class="btn btn-default"
+          [disabled]="!articleForm.form.valid"
+        >
+          {{ subRoute }}
+        </button>
+        
+      </div>
+      <div class="form-group">
+        <label for="titre">Titre</label>
+        <input
+          [(ngModel)]="article.titre"
+          type="text" 
+          class="form-control" 
+          id="titre" 
+          name="titre"
+          placeholder="Le titre de l'article"
+          required
+        >
+      </div>
+      <div class="form-group">
+        <label for="titre">Rubrique</label>
+        <select 
+          [(ngModel)]="article.rubrique"
+          class="form-control" 
+          required 
+          id="rubrique"
+          name="rubrique"
+        >        
+          <option value="cinema">Cinema</option>
+          <option value="musique">Musique</option>
+          <option value="voyage">Voyage</option>
+          <option value="jeuxvideo">Jeux vidéo</option>
+          <option value="sugar">Sugar</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="contenu">Contenu</label>
+        <textarea 
+          [(ngModel)]="article.contenu"
+          class="form-control" 
+          rows="8"
+          id="contenu"
+          name="contenu"
+          required
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+      <label>
+        <input 
+          [(ngModel)]="article.publish"
+          type="checkbox" 
+          value="true" 
+          [disabled]="checkAjouter()"
+          name="publish"
+        >
+        Publier ?
+      </label>
+      </div>
+      <div class="form-inline">
+      <div class="form-group">
+        <label for="youtubeId">Youtube id</label>
+        <input
+          [(ngModel)]="article.youtubeId"
+          type="text" 
+          class="form-control" 
+          id="youtubeId" 
+          name="youtubeId"
+          placeholder="Le code youtube"         
+        >
+      </div>
+      <button
+      type="button"
+        class="btn btn-primary"
+        [disabled]="!article.youtubeId"
+        (click)="ouvrirVideo(true)"
+      >
+        Voir la vidéo
+      </button>
+      </div>
+         
+    </form>
+  </div>
+
+
+<input type="file" ng2FileSelect [uploader]="uploader" />
+
+
+<div >{{ article  | json }}</div>
+
+
+</comp-central>
+
+<comp-lecteurvideo *ngIf="voirVideo" [videoId]="article.youtubeId"></comp-lecteurvideo>
+<div class="fermer" (click)="fermer()" *ngIf="voirVideo">
+    <button type="button" class="btn btn-default btn-lg">
+  <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span> 
+</button>
+</div>
