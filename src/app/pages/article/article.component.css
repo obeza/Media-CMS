@@ -19,6 +19,11 @@
     margin: 10px;
 }
 .upload-boxs{
-    width:200;
-    height: 100px;
+    margin-top:30px;
+}
+.image-uploade {
+    box-sizing:border-box;
+    float:left;
+    width:40%;
+    padding: 30px;
 }

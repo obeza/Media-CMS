@@ -1,0 +1,17 @@
+
+.image-uploade {
+    padding: 30px;
+    display:block;
+}
+.box-uploads{
+    margin-top:100px;
+}
+.upload-box{
+    border: 2px dotted #000;
+    background: #dfdfdf;
+    padding: 30px;
+    display:block;
+}
+.box-uploads div {
+    text-align: center;
+}

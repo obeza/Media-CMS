@@ -1,0 +1,45 @@
+<div class="row upload-boxs">
+
+  <div class="col-md-6 align-center" *ngFor="let optionUp of optionUpload; let i = index;">
+
+<div class="image-uploade align-center" *ngIf="optionUp.etat">
+
+  <div>{{ optionUp.fieldName }}</div> 
+  <img [src]="optionUp.imageUrl" (error)="errorHandler($event, optionUp.fieldName, i)" width="250px">
+
+  <div><button (click)="remove(i, optionUp.fieldName)" type="button" class="btn btn-danger">
+    <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+    Effacer</button>
+  </div>
+
+</div>
+
+  <div class="align-center upload-box" *ngIf="!optionUp.etat">
+  <label for="file-pb1" >
+      <i class="ion-document icon"></i>
+      {{ optionUp.fieldName }} index {{ i }}
+  </label>
+  <input type="file" 
+         id="file-pb1"
+         name="file-pb1"
+         style="display:none;"
+         [ng-file-select]="optionUpload[i]"
+         (onUpload)="handleUpload($event, i)">
+        option : {{ optionUpload[i] | json }}
+    </div>
+
+  </div>
+
+  
+</div>
+
+<div *ngIf="uploadFile">
+Progress: {{ uploadProgress }}%
+</div>
+
+<div *ngIf="uploadFile">
+  <div class="ui indicating olive progress">
+    <div class="bar" [style.width]="uploadProgress + '%'"></div>
+    <div class="label">Uploading file ({{ uploadProgress }}%)</div>
+  </div>
+</div>

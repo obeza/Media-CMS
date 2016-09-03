@@ -1,0 +1,12 @@
+
+.image-uploade {
+    padding: 30px;
+    display:block;
+}
+
+.upload-box{
+    border: 2px dotted #000;
+    background: #dfdfdf;
+    padding: 30px;
+    display:block;
+}

@@ -23,10 +23,10 @@ private _eventBus: Subject<BroadcastEvent>;
   constructor() {
     this._eventBus = new Subject<BroadcastEvent>();
     
-    setInterval( ()=> {
+/*    setInterval( ()=> {
       console.log('setimeout ...');
       this.broadcast('MyEvent', 'some message');
-    },3000);
+    },3000);*/
 
   }
 

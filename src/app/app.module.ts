@@ -16,6 +16,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { NavbargaucheComponent } from './components/navbargauche/navbargauche.component';
 import { CentralComponent } from './components/central/central.component';
 import { LecteurvideoComponent } from './components/lecteurvideo/lecteurvideo.component';
+import { UploadImageComponent } from './components/upload-image/upload-image.component';
+import { UploadPicture } from './components/upload-picture.directive';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { LecteurvideoComponent } from './components/lecteurvideo/lecteurvideo.co
     LoginComponent,
     NavbargaucheComponent,
     CentralComponent,
-    LecteurvideoComponent
+    LecteurvideoComponent,
+    UploadImageComponent,
+    UploadPicture
   ],
   imports: [
     BrowserModule,

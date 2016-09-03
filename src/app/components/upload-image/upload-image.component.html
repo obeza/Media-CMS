@@ -1,0 +1,49 @@
+
+<div class="row box-uploads">
+    <div class="col-md-6" *ngFor="let uploader of uploaders; let i=index;">
+        <div>
+            {{ images[i].type }}
+        <img
+            width="250px" 
+            *ngIf="images[i].etat" 
+            [src]="images[i].url" 
+            (error)="errorHandler($event, i)"
+        >
+        </div>
+       
+        <div>
+            <input type="file" name='essaie' ng2FileSelect [uploader]="uploader" />
+        </div>
+        <div>
+        <button type="button" class="btn btn-success btn-s"
+                        (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+                    <span class="glyphicon glyphicon-upload"></span> Upload
+        </button>
+        <button 
+            *ngIf="images[i].etat"
+            type="button" 
+            class="btn btn-danger btn-s"
+            (click)="remove(i)"
+        >
+        EFFACER
+        </button>
+        </div>
+
+<!--    <div>
+                    Queue progress:
+                    <div class="progress" style="">
+                        <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+                    </div>
+     </div>-->
+
+    </div>
+</div>
+
+
+
+<div>----------</div>
+
+<!--
+
+
+-->
